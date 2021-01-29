@@ -1,4 +1,4 @@
-package net.fabricmc.example;
+package project.mod.broodjekaas;
 
 import net.fabricmc.api.ModInitializer;
 
@@ -9,6 +9,9 @@ public class BroodjeKaas implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+
+		// hello world
 		System.out.println("Hello Fabric world!");
+		
 	}
 }

@@ -1,0 +1,18 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\mod_files",
+    "\\mod_files\\src",
+    "\\mod_files\\src\\main",
+    "\\mod_files\\src\\main\\java",
+    "\\mod_files\\src\\main\\java\\project",
+    "\\mod_files\\src\\main\\java\\project\\mod",
+    "\\mod_files\\src\\main\\java\\project\\mod\\broodjekaas",
+    "\\mod_files\\src\\main\\java\\project\\mod\\broodjekaas\\mixin",
+    "\\mod_files\\src\\main\\resources",
+    "\\mod_files\\src\\main\\resources\\assets",
+    "\\mod_files\\src\\main\\resources\\assets\\mod"
+  ],
+  "SelectedNode": "\\mod_files\\src\\main\\resources\\InformaticaProject.mixins.json",
+  "PreviewInSolutionExplorer": false
+}

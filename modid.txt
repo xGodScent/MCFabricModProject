@@ -1,2 +1,2 @@
-modid: InformaticaProject
-group: project.mod.broodjekaas
+modid: informaticaproject
+package: project.mod.broodjekaas

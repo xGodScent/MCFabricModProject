@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "InformaticaProject",
+  "id": "informaticaproject",
   "version": "${version}",
 
   "name": "Broodje kaas",
@@ -25,7 +25,7 @@
     ]
   },
   "mixins": [
-    "broodjekaas.mixins.json"
+    "informaticaproject.mixins.json"
   ],
 
   "depends": {

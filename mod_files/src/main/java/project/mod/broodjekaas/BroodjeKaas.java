@@ -24,7 +24,7 @@ public class BroodjeKaas implements ModInitializer {
 			net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings.of(Material.SOIL).strength(0.6F, 3.0F)
 					.sounds(BlockSoundGroup.GRAVEL).breakByTool(FabricToolTags.SHEARS));
 
-					
+
 	// runs on startup game (loads in items)
 	@Override
 	public void onInitialize() {
@@ -41,6 +41,9 @@ public class BroodjeKaas implements ModInitializer {
 
 		// FIXME: cheese_block item form doesnt work, it'll show default texture instead of the assigned block texture. It might be line 23.
 		// I dont know what causes this strange behaviour, too bad!
+
+		// TODO: FIX: crafting recipe cheese_block
+		// Broken as well! cause: unkown. 
 
 	}
 }

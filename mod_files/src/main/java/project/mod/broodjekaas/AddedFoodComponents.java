@@ -9,6 +9,8 @@ import net.minecraft.item.FoodComponent;
 // class that handles (mod added) food items
 public class AddedFoodComponents {
     
-    public static final FoodComponent CHEESE = (new FoodComponent.Builder()).hunger(5).saturationModifier((float) 0.5).statusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 100, 0), 1.0F).build();
+    // is called when food is eaten
+    public static final FoodComponent CHEESE = (new FoodComponent.Builder()).hunger(3).saturationModifier(0.2F).statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 200, 0), 0.15F).snack().build();
 
+    
 }

@@ -1,0 +1,2 @@
+modid: InformaticaProject
+group: project.mod.broodjekaas

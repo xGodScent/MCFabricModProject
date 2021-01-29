@@ -1,29 +1,31 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "InformaticaProject",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Broodje kaas",
+  "description": "Broodje kaas maken.",
   "authors": [
-    "Me!"
+    "Rio",
+    "Wassim",
+    "Pavle"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://bit.ly/3qWX6wO",
+    "sources": ""
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/InformaticaProject/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "project.mod.broodjekaas.BroodjeKaas"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "broodjekaas.mixins.json"
   ],
 
   "depends": {

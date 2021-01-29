@@ -13,7 +13,7 @@ import net.minecraft.util.registry.Registry;
 public class BroodjeKaas implements ModInitializer {
 
 	// new/modded items
-	public static final Item CHEESE = new Item(new Item.Settings().group(ItemGroup.FOOD));
+	public static final Item CHEESE = new Item(new Item.Settings().group(ItemGroup.FOOD).food(AddedFoodComponents.CHEESE));
 
 
 	// runs on startup game (loads in items)

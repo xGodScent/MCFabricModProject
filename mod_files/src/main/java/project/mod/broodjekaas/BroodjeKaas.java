@@ -1,17 +1,26 @@
+// package
 package project.mod.broodjekaas;
 
+// used libraries
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
+
+// mod class init
 public class BroodjeKaas implements ModInitializer {
+
+	// new/modded items
+	public static final Item CHEESE = new Item(new Item.Settings().group(ItemGroup.FOOD));
+
+
+	// runs on startup game (loads in items)
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-
-
-		// hello world
-		System.out.println("Hello Fabric world!");
+		
+		Registry.register(Registry.ITEM, new Identifier("informaticaproject", "cheese"), CHEESE);
 		
 	}
 }

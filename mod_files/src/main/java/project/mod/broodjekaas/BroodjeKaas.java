@@ -46,8 +46,6 @@ public class BroodjeKaas implements ModInitializer {
 		// toast item
 		Registry.register(Registry.ITEM, new Identifier("informaticaproject", "toast"), TOAST);
 		
-		// FIXME: Smelting recipe not working for toast (bread -> toast)
-		
 
 	}
 }

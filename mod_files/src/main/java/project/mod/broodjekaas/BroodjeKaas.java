@@ -24,7 +24,10 @@ public class BroodjeKaas implements ModInitializer {
 	public static final Item CHEESE_WHEEL = new Item(new Item.Settings().group(ItemGroup.FOOD).maxCount(4));
 	public static final Block CHEESE_BLOCK = new Block(FabricBlockSettings.of(Material.SOIL).strength(0.6F, 3.0F).sounds(BlockSoundGroup.CROP).breakByTool(FabricToolTags.SHEARS));
 
-	// runs on startup game (loads in items)
+	public static final Item TOAST = new Item(new Item.Settings().group(ItemGroup.FOOD).food(AddedFoodComponents.TOAST).maxCount(32));
+
+
+	// runs on startup game (loads modded items)
 	@Override
 	public void onInitialize() {
 
@@ -34,14 +37,17 @@ public class BroodjeKaas implements ModInitializer {
 		// loads cheese wheel block item (maybe use cake model??)
 		Registry.register(Registry.ITEM, new Identifier("informaticaproject", "cheese_wheel"), CHEESE_WHEEL);
 
+		// TODO: maybe re-design cheese_block recipe
 		// loads cheese_block item/block
 		Registry.register(Registry.BLOCK, new Identifier("informaticaproject", "cheese_block"), CHEESE_BLOCK);
 		Registry.register(Registry.ITEM, new Identifier("informaticaproject", "cheese_block"), new BlockItem(CHEESE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
-	
 
-		// TODO: FIX: crafting recipe cheese_block
-		// Broken as well! cause: unkown. 
+		// toast item
+		Registry.register(Registry.ITEM, new Identifier("informaticaproject", "toast"), TOAST);
+		
+		
+		
 
 	}
 }

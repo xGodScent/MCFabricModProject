@@ -38,6 +38,7 @@ public class BroodjeKaas implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("informaticaproject", "cheese_wheel"), CHEESE_WHEEL);
 
 		// TODO: maybe re-design cheese_block recipe
+		// FIXME: CHEESE_BLOCK LOOT TABLE IS BROKEN! Please fix...
 		// loads cheese_block item/block
 		Registry.register(Registry.BLOCK, new Identifier("informaticaproject", "cheese_block"), CHEESE_BLOCK);
 		Registry.register(Registry.ITEM, new Identifier("informaticaproject", "cheese_block"), new BlockItem(CHEESE_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
@@ -46,6 +47,8 @@ public class BroodjeKaas implements ModInitializer {
 		// toast item
 		Registry.register(Registry.ITEM, new Identifier("informaticaproject", "toast"), TOAST);
 		
+		// TODO: add recipe for broodje kaas and toast kaas
+		// 			-> add textures etc first
 
 	}
 }

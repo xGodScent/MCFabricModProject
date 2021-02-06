@@ -11,6 +11,6 @@ public class AddedFoodComponents {
     
     // is called when food is eaten
     public static final FoodComponent CHEESE = ( new FoodComponent.Builder()) .hunger(  2  ).saturationModifier(  0.2F  ).statusEffect( new StatusEffectInstance( StatusEffects.NAUSEA,  200,  0),  0.15F ).snack().build();
-    public static final FoodComponent TOAST = ( new FoodComponent.Builder() .hunger(  3  ).saturationModifier(  0.3F  )).build();
+    public static final FoodComponent TOAST = ( new FoodComponent.Builder()) .hunger(  3  ).saturationModifier(  0.3F  ).build();
     
 }

@@ -23,9 +23,9 @@ public class ModItems {
 
     public static final Item TOAST = new Item( new Item.Settings() .group( ItemGroup.FOOD ) .food(  AddedFoodComponents.TOAST  ) .maxCount(  32  ));
 
-    
+
     // new item group (tab in creative menu)
-	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create( new Identifier( MODID, "other" )).icon(() ->
+	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create( new Identifier( MODID, "modded_items" )).icon(() ->
 	new ItemStack( ModItems.CHEESE )).appendItems( stacks -> {
 		stacks.add( new ItemStack(  ModItems.CHEESE  ));
 		stacks.add( new ItemStack(  ModItems.CHEESE_WHEEL  ));

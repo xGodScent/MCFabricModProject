@@ -26,6 +26,10 @@ public class ModBlocks {
     // new blocks
 	public static final Block CHEESE_BLOCK = new Block( FabricBlockSettings.of(  Material.SOIL  ) 
     .strength(  0.6F,  3.0F  ) .sounds( BlockSoundGroup.CROP )
+    .breakByTool( FabricToolTags.PICKAXES, 1 ));
+
+    public static final Block ORE_CHEESE = new Block( FabricBlockSettings.of(  Material.STONE  )
+    .strength(  1.0F,  3.0F  ).sounds( BlockSoundGroup.NETHER_ORE )
     .breakByTool( FabricToolTags.PICKAXES, 2 ));
 
 
@@ -37,6 +41,9 @@ public class ModBlocks {
 		Registry.register( Registry.ITEM, new Identifier(  MODID, "cheese_block"  ),  new BlockItem(
             CHEESE_BLOCK, new FabricItemSettings().group(  ItemGroup.BUILDING_BLOCKS  )));
 
+        Registry.register( Registry.BLOCK, new Identifier(  MODID, "ore_cheese"  ), ORE_CHEESE);
+        Registry.register( Registry.ITEM, new Identifier(  MODID, "ore_cheese"  ), new BlockItem(
+            ORE_CHEESE, new FabricItemSettings().group(  ItemGroup.MATERIALS  )));
         
 
     }

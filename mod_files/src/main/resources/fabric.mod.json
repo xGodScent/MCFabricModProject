@@ -35,5 +35,8 @@
   },
   "suggests": {
     "another-mod": "*"
+  },
+  "loom": {
+    "accessWidener": "src/main/resources/informaticaproject.accesswidener"
   }
 }

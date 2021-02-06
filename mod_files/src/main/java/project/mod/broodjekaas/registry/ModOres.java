@@ -42,14 +42,15 @@ public class ModOres {
     public static void registerOres() {
 
         // cheese ore overworld
-        RegistryKey<ConfiguredFeature<?, ?>> OreCheeseOverworldConfig = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
-        new Identifier(MODID, "ore_cheese"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, OreCheeseOverworldConfig.getValue(), ORE_CHEESE);
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, OreCheeseOverworldConfig);
-        // ignore: deprecated
+        RegistryKey<ConfiguredFeature<?, ?>> OreCheeseOverworldConfig = RegistryKey.of( Registry.CONFIGURED_FEATURE_WORLDGEN,
+        new Identifier(  MODID,  "ore_cheese"  ));
+        Registry.register(  BuiltinRegistries.CONFIGURED_FEATURE,   OreCheeseOverworldConfig.getValue(),   ORE_CHEESE  );
+        BiomeModifications.addFeature(  BiomeSelectors.foundInOverworld()  , GenerationStep.Feature.UNDERGROUND_ORES,   
+        OreCheeseOverworldConfig  );
+        // ignore: deprecated ^ (line above)
 
 
-        // cheese_ore end dimension implementation  //  change all endstone in cheese_block??
+        // cheese  end dimension implementation  ->  change all endstone in cheese_block??
         
 
 

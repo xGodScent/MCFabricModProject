@@ -6,6 +6,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.minecraft.item.ItemStack;
 import project.mod.broodjekaas.AddedFoodComponents;
 
 
@@ -19,7 +21,17 @@ public class ModItems {
     public static final Item CHEESE = new Item( new Item.Settings() .group( ItemGroup.FOOD ). food(  AddedFoodComponents.CHEESE) .maxCount(  16  ));
 	public static final Item CHEESE_WHEEL = new Item( new Item.Settings().group( ItemGroup.FOOD ) .maxCount(  4  ));
 
-	public static final Item TOAST = new Item( new Item.Settings() .group( ItemGroup.FOOD ) .food(  AddedFoodComponents.TOAST  ) .maxCount(  32  ));
+    public static final Item TOAST = new Item( new Item.Settings() .group( ItemGroup.FOOD ) .food(  AddedFoodComponents.TOAST  ) .maxCount(  32  ));
+
+    
+    // new item group (tab in creative menu)
+	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create( new Identifier( MODID, "other" )).icon(() ->
+	new ItemStack( ModItems.CHEESE )).appendItems( stacks -> {
+		stacks.add( new ItemStack(  ModItems.CHEESE  ));
+		stacks.add( new ItemStack(  ModItems.CHEESE_WHEEL  ));
+		stacks.add( new ItemStack(  ModBlocks.CHEESE_BLOCK  ));
+		stacks.add( new ItemStack(  ModItems.TOAST  ));
+	}).build();
 
 
     // register method

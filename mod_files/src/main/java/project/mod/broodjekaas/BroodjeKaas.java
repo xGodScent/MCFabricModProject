@@ -12,6 +12,7 @@ import net.minecraft.util.Identifier;
 import project.mod.broodjekaas.registry.ModItems;
 import project.mod.broodjekaas.registry.ModBlocks;
 import project.mod.broodjekaas.registry.ModEntities;
+import project.mod.broodjekaas.registry.ModOres;
 
 
 // mod class init
@@ -37,6 +38,7 @@ public class BroodjeKaas implements ModInitializer {
 		ModItems.registerItems();
 		ModBlocks.registerBlocks();
 		ModEntities.registerEntites();
+		ModOres.registerOres();
 
 	}
 }

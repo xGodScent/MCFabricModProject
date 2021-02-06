@@ -6,7 +6,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "tutorial:cheese_block"
+            "name": "informaticaproject:cheese_block"
           }
         ],
         "conditions": [

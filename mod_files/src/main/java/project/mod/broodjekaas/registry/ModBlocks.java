@@ -22,14 +22,14 @@ public class ModBlocks {
     public static final String MODID = "informaticaproject";
 
     // new blocks
-	public static final Block CHEESE_BLOCK = new Block( FabricBlockSettings.of(  Material.SOIL  ) .strength(  0.6F,  3.0F  ) .sounds( BlockSoundGroup.CROP ) .breakByTool( FabricToolTags.SHEARS ));
+	public static final Block CHEESE_BLOCK = new Block( FabricBlockSettings.of(  Material.SOIL  ) 
+    .strength(  0.6F,  3.0F  ) .sounds( BlockSoundGroup.CROP ) 
+    .breakByTool( FabricToolTags.PICKAXES, 2 ));
 
 
     // register method
     public static void registerBlocks() {
 
-        // TODO: maybe re-design cheese_block recipe
-		// FIXME: CHEESE_BLOCK LOOT TABLE IS BROKEN! (CHEESE_BLOCK doesn't drop when broken) Please fix... 
 		// loads cheese_block item/block
 		Registry.register( Registry.BLOCK, new Identifier(  MODID, "cheese_block"  ),  CHEESE_BLOCK );
 		Registry.register( Registry.ITEM, new Identifier(  MODID, "cheese_block"  ),  new BlockItem(

@@ -15,7 +15,7 @@ public class BroodjeKaas implements ModInitializer {
 	public void onInitialize() {
 
 		ModItems.registerItems();
-
+		ModEntities.registerEntites();
 
 	}
 }

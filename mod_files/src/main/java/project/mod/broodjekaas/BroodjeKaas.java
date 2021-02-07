@@ -24,9 +24,7 @@ public class BroodjeKaas implements ModInitializer {
 		ModEntities.registerEntites();
 		ModOres.registerOres();
 
-		// ModWorldGeneration.registerGen();
-		// TODO: FIX world generation, we need to implement acces widener, see fabric-wiki
-
+		ModWorldGeneration.registerGen();
 
 	}
 }

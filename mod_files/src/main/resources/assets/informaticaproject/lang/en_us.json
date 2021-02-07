@@ -4,5 +4,7 @@
     "block.informaticaproject.cheese_block": "Cheese Block",
     "item.informaticaproject.toast": "Toast",
     "block.informaticaproject.ore_cheese": "Cheese Ore",
-    "generator.void": "Nothing but Void"
+    "generator.void": "Nothing but Void",
+    "generator.test_worldgen": "Cheese world!",
+    "generator.tester": "TESTER!"
 }

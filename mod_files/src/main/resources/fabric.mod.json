@@ -15,6 +15,8 @@
     "sources": ""
   },
 
+  "accessWidener" : "WorldGenAW.aw",
+
   "license": "CC0-1.0",
   "icon": "assets/InformaticaProject/icon.png",
 
@@ -35,8 +37,5 @@
   },
   "suggests": {
     "another-mod": "*"
-  },
-  "loom": {
-    "accessWidener": "src/main/resources/informaticaproject.accesswidener"
   }
 }

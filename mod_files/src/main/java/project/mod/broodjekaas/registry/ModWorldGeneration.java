@@ -44,6 +44,7 @@ public class ModWorldGeneration {
         }
     };
 
+    // TODO: FIX: THIS CAUSES A CRASH!!1 This is a really bad way of implementing a new world type, BiomeSource is broken...
     private static final GeneratorType TESTER = new GeneratorType("tester") { 
         protected ChunkGenerator getChunkGenerator(Registry<Biome> biomeRegistry,
             Registry<ChunkGeneratorSettings> settingsRegistry, long seed) {

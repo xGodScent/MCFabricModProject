@@ -53,9 +53,6 @@ public class ModItems {
 		// broodje kaas
 		Registry.register( Registry.ITEM, new Identifier(  MODID, "bread_cheese"  ), BREAD_CHEESE);
 
-		// TODO: add recipe for broodje kaas and toast kaas
-		// 			-> add textures etc first
-
         
     }
 

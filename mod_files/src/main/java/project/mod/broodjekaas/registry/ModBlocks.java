@@ -13,6 +13,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.dynamic.RegistryOps;
 import net.minecraft.util.registry.Registry;
 
 
@@ -29,8 +30,13 @@ public class ModBlocks {
     .breakByTool( FabricToolTags.PICKAXES, 1 ));
 
     public static final Block ORE_CHEESE = new Block( FabricBlockSettings.of(  Material.STONE  )
-    .strength(  3.0F,  3.0F  ).sounds( BlockSoundGroup.NETHER_ORE )
+    .strength(  3.0F,  3.0F  ) .sounds( BlockSoundGroup.NETHER_ORE )
     .breakByTool( FabricToolTags.PICKAXES, 2 ));
+
+
+    public static final Block CHEESE_WHEEL = new Block( FabricBlockSettings.of(  Material.STONE  )
+    .strength(  1.0F,  2.5F  ) .sounds( BlockSoundGroup.BAMBOO )
+    );
 
 
     // register method
@@ -45,6 +51,11 @@ public class ModBlocks {
         Registry.register( Registry.ITEM, new Identifier(  MODID, "ore_cheese"  ), new BlockItem(
             ORE_CHEESE, new FabricItemSettings().group(  ItemGroup.MATERIALS  )));
         
+
+        Registry.register( Registry.BLOCK, new Identifier(  MODID, "cheese_wheel"  ), CHEESE_WHEEL);
+        Registry.register( Registry.ITEM,  new Identifier(  MODID, "cheese_wheel"  ), new BlockItem(
+            CHEESE_WHEEL, new FabricItemSettings().group(  ItemGroup.DECORATIONS  ) .maxCount( 1 ) ));
+
 
     }
 

@@ -6,6 +6,7 @@ import net.fabricmc.api.ModInitializer;
 
 // imports other files
 import project.mod.broodjekaas.registry.ModItems;
+import project.mod.broodjekaas.blocks.cheese_wheel;
 import project.mod.broodjekaas.registry.ModBlocks;
 import project.mod.broodjekaas.registry.ModEntities;
 import project.mod.broodjekaas.registry.ModOres;

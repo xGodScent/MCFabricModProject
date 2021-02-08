@@ -29,9 +29,11 @@ public class LivingEntityMixin extends Entity {
             // player.getEquippedStack(EquipmentSlot.HEAD).isOf(YOUR_CUSTOM_ITEM)  ->  player isnt recognised??? plz fix...
 
             this.isFireImmune();
+            setInvulnerable(true);
 
         } else {
             this.setSwimming(true);
+            setOnFireFor(3);
         }
 
     }

@@ -26,7 +26,7 @@ public class LivingEntityMixin extends Entity {
         ItemStack helmetStack = equippedArmor.get(0); // 0 is for the helmet, 3 is leggings for example.
         if (helmetStack.getItem() == Items.DIAMOND_HELMET) {
             // another way of implementing:
-            // player.getEquippedStack(EquipmentSlot.HEAD).isOf(YOUR_CUSTOM_ITEM)
+            // player.getEquippedStack(EquipmentSlot.HEAD).isOf(YOUR_CUSTOM_ITEM)  ->  player isnt recognised??? plz fix...
 
             this.isFireImmune();
 

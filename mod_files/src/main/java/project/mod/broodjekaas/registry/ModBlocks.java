@@ -29,7 +29,7 @@ public class ModBlocks {
     .breakByTool( FabricToolTags.PICKAXES, 1 ));
 
     public static final Block ORE_CHEESE = new Block( FabricBlockSettings.of(  Material.STONE  )
-    .strength(  1.0F,  3.0F  ).sounds( BlockSoundGroup.NETHER_ORE )
+    .strength(  3.0F,  3.0F  ).sounds( BlockSoundGroup.NETHER_ORE )
     .breakByTool( FabricToolTags.PICKAXES, 2 ));
 
 

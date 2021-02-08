@@ -60,7 +60,9 @@ public class ModWorldGeneration {
         // adds generation type to mixin
         GeneratorTypeAccessor.getValues().add(VOID);
         GeneratorTypeAccessor.getValues().add(TEST_WORLDGEN);
-        GeneratorTypeAccessor.getValues().add(TESTER);
+        
+        // GeneratorTypeAccessor.getValues().add(TESTER);
+        // implement on fix
 
     }
 

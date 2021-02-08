@@ -30,13 +30,12 @@ public class ModBlocks {
     .breakByTool( FabricToolTags.PICKAXES, 1 ));
 
     public static final Block ORE_CHEESE = new Block( FabricBlockSettings.of(  Material.STONE  )
-    .strength(  3.0F,  3.0F  ) .sounds( BlockSoundGroup.NETHER_ORE )
+    .strength(  3.0F,  3.0F  ) .sounds( BlockSoundGroup.NETHER_ORE ) .breakByHand(false)
     .breakByTool( FabricToolTags.PICKAXES, 2 ));
 
 
     public static final Block CHEESE_WHEEL = new Block( FabricBlockSettings.of(  Material.STONE  )
-    .strength(  1.0F,  2.5F  ) .sounds( BlockSoundGroup.BAMBOO )
-    );
+    .strength(  1.0F,  2.5F  ) .sounds( BlockSoundGroup.BAMBOO ));
 
 
     // register method

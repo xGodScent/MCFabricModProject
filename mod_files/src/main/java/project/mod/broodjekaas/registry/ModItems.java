@@ -26,7 +26,7 @@ public class ModItems {
 	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create( new Identifier( MODID, "modded_items" )).icon(() ->
 	new ItemStack( ModItems.CHEESE )).appendItems( stacks -> {
 		stacks.add( new ItemStack(  ModItems.CHEESE  ));
-		stacks.add( new ItemStack(  ModItems.CHEESE_WHEEL  ));
+		stacks.add( new ItemStack(  ModBlocks.CHEESE_WHEEL  ));
 		stacks.add( new ItemStack(  ModBlocks.CHEESE_BLOCK  ));
 		stacks.add( new ItemStack(  ModBlocks.ORE_CHEESE  ));
 		stacks.add( new ItemStack(  ModItems.TOAST  ));
@@ -39,9 +39,6 @@ public class ModItems {
 
         // loads cheese item
 		Registry.register( Registry.ITEM, new Identifier(  MODID, "cheese"  ), CHEESE);
-		
-		// loads cheese wheel block item (maybe use cake model??)
-		Registry.register( Registry.ITEM, new Identifier(  MODID, "cheese_wheel"  ), CHEESE_WHEEL);
 
 
 		// toast item

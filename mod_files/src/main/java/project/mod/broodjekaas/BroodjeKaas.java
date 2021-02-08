@@ -10,6 +10,7 @@ import project.mod.broodjekaas.blocks.cheese_wheel;
 import project.mod.broodjekaas.registry.ModBlocks;
 import project.mod.broodjekaas.registry.ModEntities;
 import project.mod.broodjekaas.registry.ModOres;
+import project.mod.broodjekaas.registry.ModSounds;
 import project.mod.broodjekaas.registry.ModWorldGeneration;
 
 
@@ -24,7 +25,7 @@ public class BroodjeKaas implements ModInitializer {
 		ModBlocks.registerBlocks();
 		ModEntities.registerEntites();
 		ModOres.registerOres();
-
+		
 		ModWorldGeneration.registerGen();
 
 	}

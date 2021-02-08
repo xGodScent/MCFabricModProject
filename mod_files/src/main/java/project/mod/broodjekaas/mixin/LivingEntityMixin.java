@@ -24,14 +24,14 @@ public class LivingEntityMixin extends Entity {
     private void tick(CallbackInfo info) {
 
         ItemStack helmetStack = equippedArmor.get(0); // 0 is for the helmet, 3 is leggings for example.
-        if (isOnFire() && helmetStack.getItem() == Items.DIAMOND_HELMET) {
+        if (helmetStack.getItem() == Items.DIAMOND_HELMET) {
             // another way of implementing:
             // player.getEquippedStack(EquipmentSlot.HEAD).isOf(YOUR_CUSTOM_ITEM)
 
-            this.setInvisible(true);
+            this.isFireImmune();
 
         } else {
-            this.setInvisible(false);
+            this.setSwimming(true);
         }
 
     }

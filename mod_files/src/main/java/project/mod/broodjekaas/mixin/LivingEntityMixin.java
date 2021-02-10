@@ -29,17 +29,14 @@ public class LivingEntityMixin extends Entity {
 
         ItemStack helmetStack = equippedArmor.get(0); // 0 is for the helmet, 3 is leggings for example.
 
-        if (helmetStack.getItem().equals(Items.DIAMOND_HELMET)) {
+        if (isOnFire()) {
             // another way of implementing:
-            // player.getEquippedStack(EquipmentSlot.HEAD).isOf(YOUR_CUSTOM_ITEM)  ->  player isnt recognised??? plz fix...
+            // player.getEquippedStack(EquipmentSlot.HEAD).isOf(Items.DIAMOND_HELMET)  ->  "player" isnt recognised??? plz fix...
 
-            isFireImmune();         // what the fuck?? WORK??!!!11
-            setOnFireFor(0);        // <-- this part decided to fucking die
+            System.out.println("Air: ", getAir(), ", Armor: ", getArmorItems(), ", ItemHand: ", getItemsHand(), "EntityName: ", getEntityName() + ";");
 
-        } else {
-            setSwimming(true);      // isnt even called?? what.
-            setOnFireFor(3);
-        }
+
+        } 
 
     }
 

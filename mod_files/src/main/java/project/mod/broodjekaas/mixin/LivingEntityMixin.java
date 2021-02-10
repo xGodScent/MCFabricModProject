@@ -27,16 +27,20 @@ public class LivingEntityMixin extends Entity {
 
         // TODO: mixins make me want to kms
 
-        ItemStack helmetStack = equippedArmor.get(0); // 0 is for the helmet, 3 is leggings for example.
+        ItemStack helmetStack = equippedArmor.get(3); // 0 is for the helmet, 2 is leggings for example.
 
-        if (isOnFire()) {
+        if () {
             // another way of implementing:
             // player.getEquippedStack(EquipmentSlot.HEAD).isOf(Items.DIAMOND_HELMET)  ->  "player" isnt recognised??? plz fix...
 
-            System.out.println("Air: ", getAir(), ", Armor: ", getArmorItems(), ", ItemHand: ", getItemsHand(), "EntityName: ", getEntityName() + ";");
+            System.out.println("Air: " + getAir() + ", Armor: " + getArmorItems() + ", ItemHand: " + getItemsHand() + "EntityName: " + getEntityName() + ";");
+
+            System.out.println("Slot4: " + helmetStack);
 
 
-        } 
+            // "this" refers to all entities, fix how to get only player
+
+        }
 
     }
 

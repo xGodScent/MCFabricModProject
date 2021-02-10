@@ -1,5 +1,7 @@
 package project.mod.broodjekaas.mixin;
 
+import javax.print.event.PrintEvent;
+
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -19,20 +21,23 @@ public class LivingEntityMixin extends Entity {
 
     @Shadow @Final private DefaultedList<ItemStack> equippedArmor;
 
-    // inject code in tick method
+    // inject code into tick method
     @Inject(at = @At("HEAD"), method = "tick")
     private void tick(CallbackInfo info) {
 
+        // TODO: mixins make me want to kms
+
         ItemStack helmetStack = equippedArmor.get(0); // 0 is for the helmet, 3 is leggings for example.
-        if (helmetStack.getItem() == Items.DIAMOND_HELMET) {
+
+        if (helmetStack.getItem().equals(Items.DIAMOND_HELMET)) {
             // another way of implementing:
             // player.getEquippedStack(EquipmentSlot.HEAD).isOf(YOUR_CUSTOM_ITEM)  ->  player isnt recognised??? plz fix...
 
-            this.isFireImmune();
-            setInvulnerable(true);
+            isFireImmune();         // what the fuck?? WORK??!!!11
+            setOnFireFor(0);        // <-- this part decided to fucking die
 
         } else {
-            this.setSwimming(true);
+            setSwimming(true);      // isnt even called?? what.
             setOnFireFor(3);
         }
 

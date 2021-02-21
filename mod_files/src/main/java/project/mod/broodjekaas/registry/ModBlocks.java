@@ -53,7 +53,6 @@ public class ModBlocks {
         Registry.register( Registry.ITEM, new Identifier(  MODID, "ore_cheese"  ), new BlockItem(
             ORE_CHEESE, new FabricItemSettings().group(  ItemGroup.MATERIALS  )));
 
-        // TODO: setup ore_super_cheese loot table
         Registry.register( Registry.BLOCK, new Identifier(  MODID, "ore_super_cheese"  ), ORE_SUPER_CHEESE);
         Registry.register( Registry.ITEM,  new Identifier(  MODID, "ore_super_cheese"  ), new BlockItem(
             ORE_SUPER_CHEESE, new FabricItemSettings().group(  ItemGroup.MATERIALS  ))); 
@@ -63,6 +62,10 @@ public class ModBlocks {
         Registry.register( Registry.BLOCK, new Identifier(  MODID, "cheese_wheel"  ), CHEESE_WHEEL);
         Registry.register( Registry.ITEM,  new Identifier(  MODID, "cheese_wheel"  ), new BlockItem(
             CHEESE_WHEEL, new FabricItemSettings().group(  ItemGroup.DECORATIONS  ) .maxCount( 1 ) ));
+
+
+            //TODO: add super cheese item + features -> (maybe strength?)
+            //TODO: add smelting recipe for super cheese
 
 
     }

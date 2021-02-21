@@ -1,7 +1,6 @@
 // package
 package project.mod.broodjekaas.registry;
 
-import javax.tools.DocumentationTool.Location;
 
 // used libraries
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -13,7 +12,6 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.dynamic.RegistryOps;
 import net.minecraft.util.registry.Registry;
 
 
@@ -33,6 +31,9 @@ public class ModBlocks {
     .strength(  3.0F,  3.0F  ) .sounds( BlockSoundGroup.NETHER_ORE ) .breakByHand(false)
     .breakByTool( FabricToolTags.PICKAXES, 2 ));
 
+    public static final Block ORE_SUPER_CHEESE = new Block( FabricBlockSettings.of(  Material.STONE  )
+    .strength(  10.0F,  6.0F  ) .sounds( BlockSoundGroup.ANCIENT_DEBRIS ) .breakByHand(false)
+    .breakByTool( FabricToolTags.PICKAXES, 3 ));
 
     public static final Block CHEESE_WHEEL = new Block( FabricBlockSettings.of(  Material.STONE  )
     .strength(  1.0F,  2.5F  ) .sounds( BlockSoundGroup.BAMBOO ));
@@ -41,16 +42,24 @@ public class ModBlocks {
     // register method
     public static void registerBlocks() {
 
-		// loads cheese_block item/block
+		// cheese block
 		Registry.register( Registry.BLOCK, new Identifier(  MODID, "cheese_block"  ),  CHEESE_BLOCK );
 		Registry.register( Registry.ITEM, new Identifier(  MODID, "cheese_block"  ),  new BlockItem(
             CHEESE_BLOCK, new FabricItemSettings().group(  ItemGroup.BUILDING_BLOCKS  )));
 
+
+        // cheese ores
         Registry.register( Registry.BLOCK, new Identifier(  MODID, "ore_cheese"  ), ORE_CHEESE);
         Registry.register( Registry.ITEM, new Identifier(  MODID, "ore_cheese"  ), new BlockItem(
             ORE_CHEESE, new FabricItemSettings().group(  ItemGroup.MATERIALS  )));
+
+        // TODO: setup ore_super_cheese loot table
+        Registry.register( Registry.BLOCK, new Identifier(  MODID, "ore_super_cheese"  ), ORE_SUPER_CHEESE);
+        Registry.register( Registry.ITEM,  new Identifier(  MODID, "ore_super_cheese"  ), new BlockItem(
+            ORE_SUPER_CHEESE, new FabricItemSettings().group(  ItemGroup.MATERIALS  ))); 
         
 
+        // cheese wheel block
         Registry.register( Registry.BLOCK, new Identifier(  MODID, "cheese_wheel"  ), CHEESE_WHEEL);
         Registry.register( Registry.ITEM,  new Identifier(  MODID, "cheese_wheel"  ), new BlockItem(
             CHEESE_WHEEL, new FabricItemSettings().group(  ItemGroup.DECORATIONS  ) .maxCount( 1 ) ));

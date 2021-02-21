@@ -4,9 +4,7 @@
   "package": "project.mod.broodjekaas.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "GeneratorTypeAccessor",
-    "LivingEntityMixin",
-    "PlayerEntityMixin"
+    "GeneratorTypeAccessor"
   ],
   "client": [
     "BroodjeKaas"

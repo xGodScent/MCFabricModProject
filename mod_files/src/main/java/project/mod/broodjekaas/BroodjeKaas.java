@@ -21,10 +21,11 @@ public class BroodjeKaas implements ModInitializer {
 
 		ModItems.registerItems();
 		ModBlocks.registerBlocks();
-		ModEntities.registerEntites();
-		ModOres.registerOres();
 		
+		ModOres.registerOres();
 		ModWorldGeneration.registerGen();
+
+		ModEntities.registerEntites();
 
 	}
 }

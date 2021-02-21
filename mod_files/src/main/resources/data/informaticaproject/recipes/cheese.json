@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "informaticaproject:cheese_wheel"
-    },
-    "result": "informaticaproject:cheese",
-    "count": 4
-}

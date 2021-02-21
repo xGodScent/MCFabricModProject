@@ -1,9 +1,0 @@
-{
-    "type": "minecraft:smelting",
-    "ingredient": {
-        "item": "informaticaproject:ore_cheese"
-    },
-    "result": "informaticaproject:cheese",
-    "experience": 0.5,
-    "cookingtime": 200
-}

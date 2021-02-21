@@ -29,6 +29,7 @@ public class ModItems {
 		stacks.add( new ItemStack(  ModBlocks.CHEESE_WHEEL  ));
 		stacks.add( new ItemStack(  ModBlocks.CHEESE_BLOCK  ));
 		stacks.add( new ItemStack(  ModBlocks.ORE_CHEESE  ));
+		stacks.add( new ItemStack(  ModBlocks.ORE_SUPER_CHEESE  ));
 		stacks.add( new ItemStack(  ModItems.TOAST  ));
 		stacks.add( new ItemStack(  ModItems.BREAD_CHEESE  ));
 	}).build();
@@ -40,7 +41,6 @@ public class ModItems {
         // loads cheese item
 		Registry.register( Registry.ITEM, new Identifier(  MODID, "cheese"  ), CHEESE);
 
-
 		// toast item
 		Registry.register( Registry.ITEM, new Identifier(  MODID, "toast"  ), TOAST);
 		
@@ -48,7 +48,6 @@ public class ModItems {
 		Registry.register( Registry.ITEM, new Identifier(  MODID, "bread_cheese"  ), BREAD_CHEESE);
 
 		// 
-
         
     }
 

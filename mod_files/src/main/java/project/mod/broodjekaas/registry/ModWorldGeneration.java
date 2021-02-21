@@ -6,13 +6,11 @@ import java.util.Optional;
 import net.minecraft.client.world.GeneratorType;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.source.BiomeSource;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
 import net.minecraft.world.gen.chunk.FlatChunkGenerator;
 import net.minecraft.world.gen.chunk.FlatChunkGeneratorConfig;
 import net.minecraft.world.gen.chunk.StructuresConfig;
-import net.minecraft.world.gen.chunk.NoiseChunkGenerator;
 
 import project.mod.broodjekaas.mixin.GeneratorTypeAccessor;
 
@@ -32,37 +30,11 @@ public class ModWorldGeneration {
         }
     };
 
-    private static final GeneratorType TEST_WORLDGEN = new GeneratorType("test_worldgen") {
-        protected ChunkGenerator getChunkGenerator(Registry<Biome> biomeRegistry,
-                Registry<ChunkGeneratorSettings> chunkGeneratorSettingsRegistry, long seed) {
-            FlatChunkGeneratorConfig config = new FlatChunkGeneratorConfig(
-                    new StructuresConfig(Optional.empty(), Collections.emptyMap()), biomeRegistry);
-            config.updateLayerBlocks();
-
-            return new FlatChunkGenerator(config);
-
-        }
-    };
-
-    // TODO: FIX: THIS CAUSES A CRASH!!1 This is a really bad way of implementing a new world type, BiomeSource is broken...
-    private static final GeneratorType TESTER = new GeneratorType("tester") { 
-        protected ChunkGenerator getChunkGenerator(Registry<Biome> biomeRegistry,
-            Registry<ChunkGeneratorSettings> settingsRegistry, long seed) {
-            return new NoiseChunkGenerator(new BiomeSource(biomeRegistry, seed), 
-            seed,
-            () -> settingsRegistry.get(ChunkGeneratorSettings.OVERWORLD));
-        }
-    };
-
-
+    // register method
     public static void registerGen() {
 
         // adds generation type to mixin
         GeneratorTypeAccessor.getValues().add(VOID);
-        GeneratorTypeAccessor.getValues().add(TEST_WORLDGEN);
-        
-        // GeneratorTypeAccessor.getValues().add(TESTER);
-        // implement on fix
 
     }
 

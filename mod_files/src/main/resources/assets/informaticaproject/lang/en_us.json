@@ -5,7 +5,9 @@
     "item.informaticaproject.toast": "Toast",
     "block.informaticaproject.ore_cheese": "Cheese Ore",
     "item.informaticaproject.bread_cheese": "Cheese Bread",
+    "block.informaticaproject.ore_super_cheese": "Super Cheese Ore",
+
     "generator.void": "Nothing but Void",
-    "generator.test_worldgen": "Cheese world!",
-    "generator.tester": "TESTER!"
+
+    "itemGroup.informaticaproject.modded_items": "Modded Items (Broodje Kaas)"
 }

@@ -9,7 +9,7 @@ import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
-import project.mod.broodjekaas.world.structures.StoneSpiralFeature;
+import project.mod.broodjekaas.world.structures.CheeseTreeGen;
 import net.minecraft.world.gen.GenerationStep;
 
 // ModStructures class, the register method is called on init (startup)
@@ -21,14 +21,14 @@ public class ModStructures {
     // register method
     public static void registerStructures() {
 
-        // stone spiral
-        Registry.register(Registry.FEATURE, new Identifier(MODID, "stone_spiral"), StoneSpiralFeature.STONE_SPIRAL);
+        // cheese tree structure
+        Registry.register(Registry.FEATURE, new Identifier(MODID, "cheese_tree"), CheeseTreeGen.CHEESE_TREE);
         
-        RegistryKey<ConfiguredFeature<?, ?>> stoneSpiral = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
-        new Identifier(MODID, "stone_spiral"));
+        RegistryKey<ConfiguredFeature<?, ?>> cheeseTree = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+        new Identifier(MODID, "cheese_tree"));
         
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, stoneSpiral.getValue(), StoneSpiralFeature.STONE_SPIRAL_CONFIGURED);
-        BiomeModifications.addFeature(BiomeSelectors.all(), GenerationStep.Feature.UNDERGROUND_ORES, stoneSpiral);
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, cheeseTree.getValue(), CheeseTreeGen.CHEESE_TREE_CONFIGURED);
+        BiomeModifications.addFeature(BiomeSelectors.all(), GenerationStep.Feature.UNDERGROUND_ORES, cheeseTree);
         
 
         // ok

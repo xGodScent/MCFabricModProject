@@ -31,6 +31,8 @@ public class StoneSpiralFeature extends Feature<DefaultFeatureConfig> {
     .decorate(Decorator.CHANCE.configure(new ChanceDecoratorConfig(5)));
 
 
+
+    // NOTE: yes.. we have to this terribleness...
     // structure generation method -> here we define how we want the structure to generate
     @Override
     public boolean generate(StructureWorldAccess world, ChunkGenerator generator, Random random, BlockPos pos, DefaultFeatureConfig config) {
@@ -53,41 +55,54 @@ public class StoneSpiralFeature extends Feature<DefaultFeatureConfig> {
         if (!done) {
           for (int x = 0; x < random.nextInt(3)+3; x++) { // generates base leaves -> cross shape
 
-            offset = offset.getOpposite();
-            world.setBlockState(topPos.up(logY+1).north(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-            world.setBlockState(topPos.up(logY+1).east(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-            world.setBlockState(topPos.up(logY+1).south(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-            world.setBlockState(topPos.up(logY+1).west(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+            offset = offset.getOpposite(); // tbh idek wtf this does, WHO CARES?!
 
-            // we have to 
-            for (int xz = 1; xz < x+1; xz++) {
+            // this is what torture looks like...
+            for (int lY = 1; lY < 4; lY++) {
               
-              // draws a square into a certain dimension
-              world.setBlockState(topPos.up(logY+1).north(x).east(xz), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-              world.setBlockState(topPos.up(logY+1).north(xz).east(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-              world.setBlockState(topPos.up(logY+1).north(x).east(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-              world.setBlockState(topPos.up(logY+1).north(xz).east(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-
-              // repeat it for other dimensions
-              world.setBlockState(topPos.up(logY+1).east(x).south(xz), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-              world.setBlockState(topPos.up(logY+1).east(xz).south(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-              world.setBlockState(topPos.up(logY+1).east(x).south(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-              world.setBlockState(topPos.up(logY+1).east(xz).south(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-
-              world.setBlockState(topPos.up(logY+1).south(x).west(xz), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-              world.setBlockState(topPos.up(logY+1).south(xz).west(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-              world.setBlockState(topPos.up(logY+1).south(x).west(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-              world.setBlockState(topPos.up(logY+1).south(xz).west(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-
-              world.setBlockState(topPos.up(logY+1).west(x).north(xz), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-              world.setBlockState(topPos.up(logY+1).west(xz).north(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-              world.setBlockState(topPos.up(logY+1).west(x).north(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
-              world.setBlockState(topPos.up(logY+1).west(xz).north(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+              world.setBlockState(topPos.up(logY+lY).north(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+              world.setBlockState(topPos.up(logY+lY).east(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+              world.setBlockState(topPos.up(logY+lY).south(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+              world.setBlockState(topPos.up(logY+lY).west(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
 
 
+              for (int xz = 1; xz < x+1; xz++) {
+                
+                // draws a square into a certain dimension
+                world.setBlockState(topPos.up(logY+lY).north(x).east(xz), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+                world.setBlockState(topPos.up(logY+lY).north(xz).east(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+                world.setBlockState(topPos.up(logY+lY).north(x).east(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+                world.setBlockState(topPos.up(logY+lY).north(xz).east(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+
+                // repeat it for other dimensions
+                world.setBlockState(topPos.up(logY+lY).east(x).south(xz), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+                world.setBlockState(topPos.up(logY+lY).east(xz).south(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+                world.setBlockState(topPos.up(logY+lY).east(x).south(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+                world.setBlockState(topPos.up(logY+lY).east(xz).south(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+
+                world.setBlockState(topPos.up(logY+lY).south(x).west(xz), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+                world.setBlockState(topPos.up(logY+lY).south(xz).west(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+                world.setBlockState(topPos.up(logY+lY).south(x).west(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+                world.setBlockState(topPos.up(logY+lY).south(xz).west(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+
+                world.setBlockState(topPos.up(logY+lY).west(x).north(xz), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+                world.setBlockState(topPos.up(logY+lY).west(xz).north(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+                world.setBlockState(topPos.up(logY+lY).west(x).north(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+                world.setBlockState(topPos.up(logY+lY).west(xz).north(x), ModBlocks.ORE_SUPER_CHEESE.getDefaultState(), 3);
+
+
+              }
             }
+
+
             
 
+
+
+
+            // completions:
+            // re -add base log block
+            world.setBlockState(topPos, ModBlocks.CHEESE_BLOCK.getDefaultState(), 3);
 
             // add for extra block in the middle so leaves grow around instead of on top
             world.setBlockState(topPos.up(logY+1), ModBlocks.CHEESE_BLOCK.getDefaultState(), 3);

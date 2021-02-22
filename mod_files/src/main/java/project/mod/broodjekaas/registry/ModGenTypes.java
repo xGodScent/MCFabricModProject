@@ -14,7 +14,7 @@ import net.minecraft.world.gen.chunk.StructuresConfig;
 
 import project.mod.broodjekaas.mixin.GeneratorTypeAccessor;
 
-public class ModWorldGeneration {
+public class ModGenTypes {
 
     // mod id
     public static final String MODID = "informaticaproject";
@@ -31,7 +31,7 @@ public class ModWorldGeneration {
     };
 
     // register method
-    public static void registerGen() {
+    public static void registerGens() {
 
         // adds generation type to mixin
         GeneratorTypeAccessor.getValues().add(VOID);

@@ -49,6 +49,7 @@ public class ModOres {
     .repeat(20); // number of ore veins/generations per chunk
 
 
+
     // register method
     public static void registerOres() {
       
@@ -71,14 +72,28 @@ public class ModOres {
       // /fill ~-8 0 ~-8 ~8 ~ ~8 minecraft:air replace minecraft:end_stone
 
 
+
+      
+
+
+
+
+
+
+
+
+
       // for actual changing the end stone we might have to look into: GenerationStep.Feature.UNDERGROUND_ORES -> Feature.
       // ->  change all endstone in cheese_block
       
       // https://fabricmc.net/wiki/tutorial:features
       // https://github.com/FabricMC/fabric/pull/1097
       // https://minecraft.gamepedia.com/Biome/JSON_format
-      // https://fabricmc.net/wiki/tutorial:1.15:jigsaw
+      // https://fabricmc.net/wiki/tutorial:jigsaw
       // https://fabricmc.net/wiki/tutorial:ores
+
+
+
 
 
     }

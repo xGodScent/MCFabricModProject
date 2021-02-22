@@ -3,8 +3,6 @@ package project.mod.broodjekaas.world.structures;
 // used libraries
 import java.util.Random;
 import com.mojang.serialization.Codec;
-
-import net.java.games.input.Component.Identifier.Axis;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.StructureWorldAccess;

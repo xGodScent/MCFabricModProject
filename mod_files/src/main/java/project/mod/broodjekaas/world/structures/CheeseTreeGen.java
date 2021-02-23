@@ -5,6 +5,7 @@ import java.util.Random;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.StructureWorldAccess;
@@ -18,6 +19,7 @@ import net.minecraft.world.gen.feature.FeatureConfig;
 import project.mod.broodjekaas.registry.ModBlocks;
 import net.minecraft.world.Heightmap;
 
+// chrees = cheese + trees
 public class CheeseTreeGen extends Feature<DefaultFeatureConfig> {
     
   public CheeseTreeGen(Codec<DefaultFeatureConfig> config) {
@@ -42,14 +44,17 @@ public class CheeseTreeGen extends Feature<DefaultFeatureConfig> {
       // some shit we need
       BlockPos topPos = world.getTopPosition(Heightmap.Type.WORLD_SURFACE, pos);
       Direction offset = Direction.NORTH;
-      Block LOG = ModBlocks.ORE_CHEESE;
+
+      // TODO: change the blocks to the actual textures; log=cheese_stick_block/log  ~  leaves=molten_cheese_block
+      Block LOG = ModBlocks.ORE_CHEESE; 
       Block LEAVES = ModBlocks.CHEESE_BLOCK;
+      Block EMPTY = Blocks.AIR;
 
 
 
       // generates tree
       boolean done = false;
-      for (int logY = (random.nextInt(4)+4); logY > 0; logY--) {
+      for (int logY = (random.nextInt(4)+3); logY > 0; logY--) { // this decides how tall the tree will be
         offset = offset.getOpposite();
 
         // generates logs -> each iteration it adds a block downwards
@@ -58,74 +63,111 @@ public class CheeseTreeGen extends Feature<DefaultFeatureConfig> {
 
         // generates leaves -> makes sure we only get leaves on the top blocks (and not all the way down)
         if (!done) {
-          for (int x = 0; x < random.nextInt(3)+3; x++) { // generates base leaves -> cross shape
+          for (int x = 0; x < random.nextInt(2)+3; x++) { // generates base leaves -> cross shape
 
             offset = offset.getOpposite(); // tbh idek wtf this does, WHO CARES?!
+            int remover = 0;
 
             // this is what torture looks like...
             for (int lY = 1; lY < 4; lY++) {
               
-              world.setBlockState(topPos.up(logY+lY).north(x), LEAVES.getDefaultState(), 3);
-              world.setBlockState(topPos.up(logY+lY).east(x), LEAVES.getDefaultState(), 3);
-              world.setBlockState(topPos.up(logY+lY).south(x), LEAVES.getDefaultState(), 3);
-              world.setBlockState(topPos.up(logY+lY).west(x), LEAVES.getDefaultState(), 3);
+              world.setBlockState(topPos.up(logY+lY).north(x-remover), LEAVES.getDefaultState(), 3);
+              world.setBlockState(topPos.up(logY+lY).east(x-remover), LEAVES.getDefaultState(), 3);
+              world.setBlockState(topPos.up(logY+lY).south(x-remover), LEAVES.getDefaultState(), 3);
+              world.setBlockState(topPos.up(logY+lY).west(x-remover), LEAVES.getDefaultState(), 3);
 
               
               // makes square out of leaves
               for (int xz = 1; xz < x+1; xz++) {
                 
-                // draws a square into a certain dimension
-                world.setBlockState(topPos.up(logY+lY).north(x).east(xz), LEAVES.getDefaultState(), 3);
-                world.setBlockState(topPos.up(logY+lY).north(xz).east(x), LEAVES.getDefaultState(), 3);
-                world.setBlockState(topPos.up(logY+lY).north(x).east(x), LEAVES.getDefaultState(), 3);
-                world.setBlockState(topPos.up(logY+lY).north(xz).east(x), LEAVES.getDefaultState(), 3);
+                // if leave generation height isnt top layer
+                if (lY != 3) {
 
-                // repeat it for other dimensions
-                world.setBlockState(topPos.up(logY+lY).east(x).south(xz), LEAVES.getDefaultState(), 3);
-                world.setBlockState(topPos.up(logY+lY).east(xz).south(x), LEAVES.getDefaultState(), 3);
-                world.setBlockState(topPos.up(logY+lY).east(x).south(x), LEAVES.getDefaultState(), 3);
-                world.setBlockState(topPos.up(logY+lY).east(xz).south(x), LEAVES.getDefaultState(), 3);
+                  // draws a square into a certain dimension
+                  world.setBlockState(topPos.up(logY+lY).north(x-remover).east(xz-remover), LEAVES.getDefaultState(), 3);
+                  world.setBlockState(topPos.up(logY+lY).north(xz-remover).east(x-remover), LEAVES.getDefaultState(), 3);
+                  world.setBlockState(topPos.up(logY+lY).north(x-remover).east(x-remover), LEAVES.getDefaultState(), 3);
+                  world.setBlockState(topPos.up(logY+lY).north(xz-remover).east(x-remover), LEAVES.getDefaultState(), 3);
 
-                world.setBlockState(topPos.up(logY+lY).south(x).west(xz), LEAVES.getDefaultState(), 3);
-                world.setBlockState(topPos.up(logY+lY).south(xz).west(x), LEAVES.getDefaultState(), 3);
-                world.setBlockState(topPos.up(logY+lY).south(x).west(x), LEAVES.getDefaultState(), 3);
-                world.setBlockState(topPos.up(logY+lY).south(xz).west(x), LEAVES.getDefaultState(), 3);
+                  // repeat it for other dimensions
+                  world.setBlockState(topPos.up(logY+lY).east(x-remover).south(xz-remover), LEAVES.getDefaultState(), 3);
+                  world.setBlockState(topPos.up(logY+lY).east(xz-remover).south(x-remover), LEAVES.getDefaultState(), 3);
+                  world.setBlockState(topPos.up(logY+lY).east(x-remover).south(x-remover), LEAVES.getDefaultState(), 3);
+                  world.setBlockState(topPos.up(logY+lY).east(xz-remover).south(x-remover), LEAVES.getDefaultState(), 3);
 
-                world.setBlockState(topPos.up(logY+lY).west(x).north(xz), LEAVES.getDefaultState(), 3);
-                world.setBlockState(topPos.up(logY+lY).west(xz).north(x), LEAVES.getDefaultState(), 3);
-                world.setBlockState(topPos.up(logY+lY).west(x).north(x), LEAVES.getDefaultState(), 3);
-                world.setBlockState(topPos.up(logY+lY).west(xz).north(x), LEAVES.getDefaultState(), 3);
+                  world.setBlockState(topPos.up(logY+lY).south(x-remover).west(xz-remover), LEAVES.getDefaultState(), 3);
+                  world.setBlockState(topPos.up(logY+lY).south(xz-remover).west(x-remover), LEAVES.getDefaultState(), 3);
+                  world.setBlockState(topPos.up(logY+lY).south(x-remover).west(x-remover), LEAVES.getDefaultState(), 3);
+                  world.setBlockState(topPos.up(logY+lY).south(xz-remover).west(x-remover), LEAVES.getDefaultState(), 3);
 
+                  world.setBlockState(topPos.up(logY+lY).west(x-remover).north(xz-remover), LEAVES.getDefaultState(), 3);
+                  world.setBlockState(topPos.up(logY+lY).west(xz-remover).north(x-remover), LEAVES.getDefaultState(), 3);
+                  world.setBlockState(topPos.up(logY+lY).west(x-remover).north(x-remover), LEAVES.getDefaultState(), 3);
+                  world.setBlockState(topPos.up(logY+lY).west(xz-remover).north(x-remover), LEAVES.getDefaultState(), 3);
+
+
+                // check if top layer for leaves
+                } else if (lY == 3) {
+
+                  if (xz > 2) { // add some extra leaves around the top
+                
+                    world.setBlockState(topPos.up(logY+3).north(x-2), LEAVES.getDefaultState(), 3);
+                    world.setBlockState(topPos.up(logY+3).east(x-2), LEAVES.getDefaultState(), 3);
+                    world.setBlockState(topPos.up(logY+3).south(x-2), LEAVES.getDefaultState(), 3);
+                    world.setBlockState(topPos.up(logY+3).west(x-2), LEAVES.getDefaultState(), 3);
+                
+                  } else { // some extra leave removal 
+
+                    world.setBlockState(topPos.up(logY+lY).north(x), EMPTY.getDefaultState(), 3);
+                    world.setBlockState(topPos.up(logY+lY).east(x), EMPTY.getDefaultState(), 3);
+                    world.setBlockState(topPos.up(logY+lY).south(x), EMPTY.getDefaultState(), 3);
+                    world.setBlockState(topPos.up(logY+lY).west(x), EMPTY.getDefaultState(), 3);
+                  
+                  }
+ 
+                }
+                
+                // the remover var removes some leaves
+                remover++;
 
               }
+
             }
 
-
-
-
-
-
-
             // completions:
-            // re -add base log block
+            // re-add base log block
             world.setBlockState(topPos, LOG.getDefaultState(), 3);
 
             // add for extra block in the middle so leaves grow around instead of on top
             world.setBlockState(topPos.up(logY+1), LOG.getDefaultState(), 3);
         
-          }
-        }
+            // replace leaves corners lowest y level
+            world.setBlockState(topPos.up(logY+1).north(x).east(x), EMPTY.getDefaultState(), 3);
+            world.setBlockState(topPos.up(logY+1).east(x).south(x), EMPTY.getDefaultState(), 3);
+            world.setBlockState(topPos.up(logY+1).south(x).west(x), EMPTY.getDefaultState(), 3);
+            world.setBlockState(topPos.up(logY+1).west(x).north(x), EMPTY.getDefaultState(), 3);
 
+            // replace leaves corners second y level
+            world.setBlockState(topPos.up(logY+2).north(x-1).east(x-1), EMPTY.getDefaultState(), 3);
+            world.setBlockState(topPos.up(logY+2).east(x-1).south(x-1), EMPTY.getDefaultState(), 3);
+            world.setBlockState(topPos.up(logY+2).south(x-1).west(x-1), EMPTY.getDefaultState(), 3);
+            world.setBlockState(topPos.up(logY+2).west(x-1).north(x-1), EMPTY.getDefaultState(), 3);
+
+
+          }
+        } // if (!done) statements
+
+        // set to true so we dont keep running the leaves generation
         done = true;
 
-      }
+      } // tree gen for loop
     
 
-
+      // generation was succesful
       return true;
 
-    }
 
+    }
 
 
   }

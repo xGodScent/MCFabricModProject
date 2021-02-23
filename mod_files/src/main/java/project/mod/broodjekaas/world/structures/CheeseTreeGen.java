@@ -32,7 +32,7 @@ public class CheeseTreeGen extends Feature<DefaultFeatureConfig> {
 
     // penis
     public static final ConfiguredFeature<?, ?> CHEESE_TREE_CONFIGURED = CHEESE_TREE.configure(FeatureConfig.DEFAULT)
-    .decorate(Decorator.CHANCE.configure(new ChanceDecoratorConfig(5)));
+    .decorate(Decorator.CHANCE.configure(new ChanceDecoratorConfig(5))); // tbh idk what this is lmao
 
 
 
@@ -45,12 +45,12 @@ public class CheeseTreeGen extends Feature<DefaultFeatureConfig> {
       BlockPos topPos = world.getTopPosition(Heightmap.Type.WORLD_SURFACE, pos);
       Direction offset = Direction.NORTH;
 
-      // TODO: change the blocks to the actual textures; log=cheese_stick_block/log  ~  leaves=molten_cheese_block
-      Block LOG = ModBlocks.ORE_CHEESE; 
-      Block LEAVES = ModBlocks.CHEESE_BLOCK;
+      // TODO: change the blocks to the actual textures; log=cheese_stick_block/log  ~  leaves=molten_cheese_block   ->   ModBlocks.CHEESE_BLOCK;
+      Block LOG = Blocks.SPRUCE_LOG; 
+      Block LEAVES = Blocks.BIRCH_LEAVES;
       Block EMPTY = Blocks.AIR;
 
-
+      
 
       // generates tree
       boolean done = false;

@@ -46,7 +46,7 @@ public class ModOres {
       0, // min y level
       69))) // max y level
     .spreadHorizontally()
-    .repeat(20); // number of ore veins/generations per chunk
+    .repeat(25); // number of ore veins/generations per chunk
 
 
 

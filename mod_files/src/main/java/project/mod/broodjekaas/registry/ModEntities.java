@@ -18,5 +18,3 @@ public class ModEntities {
     }
 }
 
-
-// TODO: add to correct folder

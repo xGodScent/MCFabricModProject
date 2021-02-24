@@ -27,7 +27,7 @@ public class CheeseTreeGen extends Feature<DefaultFeatureConfig> {
   }
    
     
-    // stone spiral is defined to call for register
+    // cheese_tree is defined to call for register
     public static final Feature<DefaultFeatureConfig> CHEESE_TREE = new CheeseTreeGen(DefaultFeatureConfig.CODEC);
 
     // penis
@@ -46,15 +46,20 @@ public class CheeseTreeGen extends Feature<DefaultFeatureConfig> {
       Direction offset = Direction.NORTH;
 
       // TODO: change the blocks to the actual textures; log=cheese_stick_block/log  ~  leaves=molten_cheese_block   ->   ModBlocks.CHEESE_BLOCK;
-      Block LOG = Blocks.SPRUCE_LOG; 
-      Block LEAVES = Blocks.BIRCH_LEAVES;
+      Block LOG = ModBlocks.ORE_SUPER_CHEESE; 
+      Block LEAVES = ModBlocks.CHEESE_BLOCK;
       Block EMPTY = Blocks.AIR;
 
+
+      // NOTE: maxLeaveGenHeight breaks the generation if its not set to the default (3)
+      // defaults = maxLogGenHeight= 1 to 4   -   maxLeaveGenHeight=3
+      int maxLogGenHeight = 3;    // this is still random as it gets configured as the following -> [  random.nextInt(maxLogGenHeight)+3  ]
+      int maxLeaveGenHeight = 3;  // max leaves gen height on top of the logs -> 2 of the blocks get replaced with logs in the middle later
       
 
       // generates tree
       boolean done = false;
-      for (int logY = (random.nextInt(4)+3); logY > 0; logY--) { // this decides how tall the tree will be
+      for (int logY = (random.nextInt(maxLogGenHeight)+3); logY > 0; logY--) { // this decides how tall the tree will be
         offset = offset.getOpposite();
 
         // generates logs -> each iteration it adds a block downwards
@@ -69,7 +74,7 @@ public class CheeseTreeGen extends Feature<DefaultFeatureConfig> {
             int remover = 0;
 
             // this is what torture looks like...
-            for (int lY = 1; lY < 4; lY++) {
+            for (int lY = 1; lY < (maxLeaveGenHeight+1); lY++) {
               
               world.setBlockState(topPos.up(logY+lY).north(x-remover), LEAVES.getDefaultState(), 3);
               world.setBlockState(topPos.up(logY+lY).east(x-remover), LEAVES.getDefaultState(), 3);
@@ -81,7 +86,7 @@ public class CheeseTreeGen extends Feature<DefaultFeatureConfig> {
               for (int xz = 1; xz < x+1; xz++) {
                 
                 // if leave generation height isnt top layer
-                if (lY != 3) {
+                if (lY != maxLeaveGenHeight) {
 
                   // draws a square into a certain dimension
                   world.setBlockState(topPos.up(logY+lY).north(x-remover).east(xz-remover), LEAVES.getDefaultState(), 3);
@@ -107,7 +112,7 @@ public class CheeseTreeGen extends Feature<DefaultFeatureConfig> {
 
 
                 // check if top layer for leaves
-                } else if (lY == 3) {
+                } else if (lY == maxLeaveGenHeight) {
 
                   if (xz > 2) { // add some extra leaves around the top
                 
@@ -140,6 +145,7 @@ public class CheeseTreeGen extends Feature<DefaultFeatureConfig> {
 
             // add for extra block in the middle so leaves grow around instead of on top
             world.setBlockState(topPos.up(logY+1), LOG.getDefaultState(), 3);
+            world.setBlockState(topPos.up(logY+2), LOG.getDefaultState(), 3);
         
             // replace leaves corners lowest y level
             world.setBlockState(topPos.up(logY+1).north(x).east(x), EMPTY.getDefaultState(), 3);
@@ -155,7 +161,8 @@ public class CheeseTreeGen extends Feature<DefaultFeatureConfig> {
 
 
           }
-        } // if (!done) statements
+          
+        } // if (!done) statement
 
         // set to true so we dont keep running the leaves generation
         done = true;

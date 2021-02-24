@@ -27,7 +27,7 @@
     ]
   },
   "mixins": [
-    "informaticaproject.mixins.json"
+    "InformaticaProject.mixins.json"
   ],
 
   "depends": {

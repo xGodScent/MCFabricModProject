@@ -18,7 +18,7 @@
   "accessWidener" : "WorldGenAW.aw",
 
   "license": "CC0-1.0",
-  "icon": "assets/InformaticaProject/icon.png",
+  "icon": "assets/informaticaproject/icon.png",
 
   "environment": "*",
   "entrypoints": {

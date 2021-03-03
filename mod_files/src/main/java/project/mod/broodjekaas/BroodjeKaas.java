@@ -17,7 +17,7 @@ import project.mod.broodjekaas.registry.ModStructures;
 // mod class init
 public class BroodjeKaas implements ModInitializer {
 
-	// runs on startup game
+	// register method for game to initialize on startup
 	@Override
 	public void onInitialize() {
 

@@ -6,6 +6,8 @@
     "block.informaticaproject.ore_cheese": "Cheese Ore",
     "item.informaticaproject.bread_cheese": "Cheese Bread",
     "block.informaticaproject.ore_super_cheese": "Super Cheese Ore",
+    "block.informaticaproject.cheese_leaves": "Cheese Leaves",
+    "block.informaticaproject.cheese_log": "Cheese Log",
 
     "generator.cheese_end": "Broodje Kaas (World Generation)",
 

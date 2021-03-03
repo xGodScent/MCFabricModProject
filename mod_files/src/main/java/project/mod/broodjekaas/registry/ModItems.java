@@ -32,6 +32,8 @@ public class ModItems {
 		stacks.add( new ItemStack(  ModBlocks.ORE_SUPER_CHEESE  ));
 		stacks.add( new ItemStack(  ModItems.TOAST  ));
 		stacks.add( new ItemStack(  ModItems.BREAD_CHEESE  ));
+		stacks.add( new ItemStack(  ModBlocks.CHEESE_LOG  ));
+		stacks.add( new ItemStack(  ModBlocks.CHEESE_LEAVES  ));
 	}).build();
 
 

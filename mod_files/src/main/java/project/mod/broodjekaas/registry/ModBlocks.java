@@ -38,6 +38,14 @@ public class ModBlocks {
     public static final Block CHEESE_WHEEL = new Block( FabricBlockSettings.of(  Material.STONE  )
     .strength(  1.0F,  2.5F  ) .sounds( BlockSoundGroup.BAMBOO ));
 
+    public static final Block CHEESE_LOG = new Block( FabricBlockSettings.of(  Material.WOOD  )
+    .strength(  2.0F,  2.0F  ) .sounds( BlockSoundGroup.WOOD ) .breakByHand(true)
+    .breakByTool( FabricToolTags.AXES, 1 ));
+
+    public static final Block CHEESE_LEAVES = new Block( FabricBlockSettings.of(  Material.LEAVES  )
+    .strength(  0.2F,  0.2F  ) .sounds( BlockSoundGroup.LILY_PAD ) .breakByHand(true)
+    .breakByTool( FabricToolTags.SHEARS, 1 ));
+
 
     // register method
     public static void registerBlocks() {
@@ -62,6 +70,18 @@ public class ModBlocks {
         Registry.register( Registry.BLOCK, new Identifier(  MODID, "cheese_wheel"  ), CHEESE_WHEEL);
         Registry.register( Registry.ITEM,  new Identifier(  MODID, "cheese_wheel"  ), new BlockItem(
             CHEESE_WHEEL, new FabricItemSettings().group(  ItemGroup.DECORATIONS  ) .maxCount( 1 ) ));
+
+
+        // cheese log
+        Registry.register( Registry.BLOCK, new Identifier(  MODID, "cheese_log"  ), CHEESE_LOG);
+        Registry.register( Registry.ITEM,  new Identifier(  MODID, "cheese_log"  ), new BlockItem(
+            CHEESE_LOG, new FabricItemSettings().group(  ItemGroup.MATERIALS  )));
+
+        // cheese leaves
+        Registry.register( Registry.BLOCK, new Identifier(  MODID, "cheese_leaves"  ), CHEESE_LEAVES);
+        Registry.register( Registry.ITEM,  new Identifier(  MODID, "cheese_leaves"  ), new BlockItem(
+            CHEESE_LEAVES, new FabricItemSettings().group(  ItemGroup.MATERIALS  )));
+
 
 
             //TODO: add super cheese item + features -> (maybe strength?)

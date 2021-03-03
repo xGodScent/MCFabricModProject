@@ -46,8 +46,8 @@ public class CheeseTreeGen extends Feature<DefaultFeatureConfig> {
       Direction offset = Direction.NORTH;
 
       // TODO: change the blocks to the actual textures; log=cheese_stick_block/log  ~  leaves=molten_cheese_block   ->   ModBlocks.CHEESE_BLOCK;
-      Block LOG = ModBlocks.ORE_SUPER_CHEESE; 
-      Block LEAVES = ModBlocks.CHEESE_BLOCK;
+      Block LOG = ModBlocks.CHEESE_LOG; 
+      Block LEAVES = ModBlocks.CHEESE_LEAVES;
       Block EMPTY = Blocks.AIR;
 
 

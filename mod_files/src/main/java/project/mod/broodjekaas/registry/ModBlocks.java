@@ -1,13 +1,14 @@
 // package
 package project.mod.broodjekaas.registry;
 
-
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 // used libraries
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
@@ -82,7 +83,8 @@ public class ModBlocks {
         Registry.register( Registry.ITEM,  new Identifier(  MODID, "cheese_leaves"  ), new BlockItem(
             CHEESE_LEAVES, new FabricItemSettings().group(  ItemGroup.MATERIALS  )));
 
-
+        // BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHEESE_LEAVES, RenderLayer.getCutout());
+        // BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHEESE_LEAVES, RenderLayer.getTranslucent());
 
             //TODO: add super cheese item + features -> (maybe strength?)
             //TODO: add smelting recipe for super cheese

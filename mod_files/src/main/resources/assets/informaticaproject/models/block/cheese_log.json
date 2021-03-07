@@ -1,6 +1,8 @@
 {
-    "parent": "minecraft:block/cube_all",
+    "parent": "minecraft:block/cube_bottom_top",
     "textures": {
-        "all": "informaticaproject:block/cheese_log"
+        "top": "informaticaproject:block/cheese_log_top",
+        "bottom": "informaticaproject:block/cheese_log_top",
+        "side": "informaticaproject:block/cheese_log"
     }
 }

@@ -14,6 +14,9 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import project.mod.broodjekaas.blocks.cheese_block;
+import project.mod.broodjekaas.blocks.cheese_leaves;
+import project.mod.broodjekaas.blocks.cheese_wheel;
 
 
 
@@ -24,7 +27,7 @@ public class ModBlocks {
     public static final String MODID = "informaticaproject";
 
     // new blocks
-	public static final Block CHEESE_BLOCK = new Block( FabricBlockSettings.of(  Material.SOIL  ) 
+	public static final Block CHEESE_BLOCK = new cheese_block( FabricBlockSettings.of(  Material.SOIL  ) 
     .strength(  0.6F,  3.0F  ) .sounds( BlockSoundGroup.CROP )
     .breakByTool( FabricToolTags.PICKAXES, 1 ));
 
@@ -36,14 +39,17 @@ public class ModBlocks {
     .strength(  10.0F,  6.0F  ) .sounds( BlockSoundGroup.ANCIENT_DEBRIS ) .breakByHand(false)
     .breakByTool( FabricToolTags.PICKAXES, 3 ));
 
-    public static final Block CHEESE_WHEEL = new Block( FabricBlockSettings.of(  Material.STONE  )
-    .strength(  1.0F,  2.5F  ) .sounds( BlockSoundGroup.BAMBOO ));
-
     public static final Block CHEESE_LOG = new Block( FabricBlockSettings.of(  Material.WOOD  )
     .strength(  2.0F,  2.0F  ) .sounds( BlockSoundGroup.WOOD ) .breakByHand(true)
     .breakByTool( FabricToolTags.AXES, 1 ));
 
-    public static final Block CHEESE_LEAVES = new Block( FabricBlockSettings.of(  Material.LEAVES  )
+
+
+    public static final Block CHEESE_WHEEL = new cheese_wheel( FabricBlockSettings.of(  Material.STONE  )
+    .strength(  1.0F,  2.5F  ) .sounds( BlockSoundGroup.BAMBOO ));
+
+
+    public static final Block CHEESE_LEAVES = new cheese_leaves( FabricBlockSettings.of(  Material.LEAVES  )
     .strength(  0.2F,  0.2F  ) .sounds( BlockSoundGroup.LILY_PAD ) .breakByHand(true)
     .breakByTool( FabricToolTags.SHEARS, 1 ));
 
@@ -83,8 +89,9 @@ public class ModBlocks {
         Registry.register( Registry.ITEM,  new Identifier(  MODID, "cheese_leaves"  ), new BlockItem(
             CHEESE_LEAVES, new FabricItemSettings().group(  ItemGroup.MATERIALS  )));
 
-        // BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHEESE_LEAVES, RenderLayer.getCutout());
-        // BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHEESE_LEAVES, RenderLayer.getTranslucent());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHEESE_WHEEL, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHEESE_LEAVES, RenderLayer.getCutout());
 
             //TODO: add super cheese item + features -> (maybe strength?)
             //TODO: add smelting recipe for super cheese

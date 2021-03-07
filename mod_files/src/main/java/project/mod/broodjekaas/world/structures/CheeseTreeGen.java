@@ -42,12 +42,6 @@ public class CheeseTreeGen extends Feature<DefaultFeatureConfig> {
     // structure generation method -> here we define how we want the structure to generate
     @Override
     public boolean generate(StructureWorldAccess world, ChunkGenerator generator, Random random, BlockPos pos, DefaultFeatureConfig config) {
-      
-      System.out.println(  world.getTopPosition(Heightmap.Type.WORLD_SURFACE, pos)  );
-      System.out.println(  new BlockPos( pos.getX(), 0, pos.getZ())  );
-
-      System.out.println(  world.getTopPosition(Heightmap.Type.WORLD_SURFACE, pos)   ==   new BlockPos( pos.getX(), 0, pos.getZ())  );
-
 
       // checks if highest block is equal to 0   ->   if topPos is equal to 0 : we just return a true so it thinks generation was succesful and then we dont generate the structure
       if (  world.getTopPosition(Heightmap.Type.WORLD_SURFACE, pos).equals( new BlockPos( pos.getX(), 0, pos.getZ()) )  ) {

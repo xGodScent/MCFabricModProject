@@ -16,7 +16,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import project.mod.broodjekaas.blocks.cheese_block;
 import project.mod.broodjekaas.blocks.cheese_leaves;
-import project.mod.broodjekaas.blocks.cheese_wheel;
 
 
 
@@ -43,14 +42,8 @@ public class ModBlocks {
     .strength(  2.0F,  2.0F  ) .sounds( BlockSoundGroup.WOOD ) .breakByHand(true)
     .breakByTool( FabricToolTags.AXES, 1 ));
 
-
-
-    public static final Block CHEESE_WHEEL = new cheese_wheel( FabricBlockSettings.of(  Material.STONE  )
-    .strength(  1.0F,  2.5F  ) .sounds( BlockSoundGroup.BAMBOO ));
-
-
     public static final Block CHEESE_LEAVES = new cheese_leaves( FabricBlockSettings.of(  Material.LEAVES  )
-    .strength(  0.2F,  0.2F  ) .sounds( BlockSoundGroup.LILY_PAD ) .breakByHand(true)
+    .strength(  0.2F,  0.2F  ) .sounds( BlockSoundGroup.WOOD ) .breakByHand(true)
     .breakByTool( FabricToolTags.SHEARS, 1 ));
 
 
@@ -71,14 +64,7 @@ public class ModBlocks {
         Registry.register( Registry.BLOCK, new Identifier(  MODID, "ore_super_cheese"  ), ORE_SUPER_CHEESE);
         Registry.register( Registry.ITEM,  new Identifier(  MODID, "ore_super_cheese"  ), new BlockItem(
             ORE_SUPER_CHEESE, new FabricItemSettings().group(  ItemGroup.MATERIALS  ))); 
-        
-
-        // cheese wheel block
-        Registry.register( Registry.BLOCK, new Identifier(  MODID, "cheese_wheel"  ), CHEESE_WHEEL);
-        Registry.register( Registry.ITEM,  new Identifier(  MODID, "cheese_wheel"  ), new BlockItem(
-            CHEESE_WHEEL, new FabricItemSettings().group(  ItemGroup.DECORATIONS  ) .maxCount( 1 ) ));
-
-
+    
         // cheese log
         Registry.register( Registry.BLOCK, new Identifier(  MODID, "cheese_log"  ), CHEESE_LOG);
         Registry.register( Registry.ITEM,  new Identifier(  MODID, "cheese_log"  ), new BlockItem(
@@ -87,10 +73,8 @@ public class ModBlocks {
         // cheese leaves
         Registry.register( Registry.BLOCK, new Identifier(  MODID, "cheese_leaves"  ), CHEESE_LEAVES);
         Registry.register( Registry.ITEM,  new Identifier(  MODID, "cheese_leaves"  ), new BlockItem(
-            CHEESE_LEAVES, new FabricItemSettings().group(  ItemGroup.MATERIALS  )));
+            CHEESE_LEAVES, new FabricItemSettings().group(  ItemGroup.DECORATIONS  )));
 
-
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHEESE_WHEEL, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHEESE_LEAVES, RenderLayer.getCutout());
 
             //TODO: add super cheese item + features -> (maybe strength?)

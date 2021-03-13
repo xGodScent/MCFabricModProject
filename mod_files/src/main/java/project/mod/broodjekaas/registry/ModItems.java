@@ -21,12 +21,14 @@ public class ModItems {
     public static final Item CHEESE = new Item( new Item.Settings() .group( ItemGroup.FOOD ). food(  AddedFoodComponents.CHEESE) .maxCount(  64  ));
     public static final Item TOAST = new Item( new Item.Settings() .group( ItemGroup.FOOD ) .food(  AddedFoodComponents.TOAST  ) .maxCount(  32  ));
 	public static final Item BREAD_CHEESE = new Item( new Item.Settings() .group(ItemGroup.FOOD) .maxCount(16) .food(AddedFoodComponents.BREAD_CHEESE));
+	public static final Item CHEESE_WHEEL = new Item( new Item.Settings() .group( ItemGroup.FOOD ) .food(  AddedFoodComponents.CHEESE_WHEEL  ) .maxCount(  1  ));
+
 
     // new item group (tab in creative menu)
 	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create( new Identifier( MODID, "modded_items" )).icon(() ->
 	new ItemStack( ModItems.CHEESE )).appendItems( stacks -> {
 		stacks.add( new ItemStack(  ModItems.CHEESE  ));
-		stacks.add( new ItemStack(  ModBlocks.CHEESE_WHEEL  ));
+		stacks.add( new ItemStack(  ModItems.CHEESE_WHEEL  ));
 		stacks.add( new ItemStack(  ModBlocks.CHEESE_BLOCK  ));
 		stacks.add( new ItemStack(  ModBlocks.ORE_CHEESE  ));
 		stacks.add( new ItemStack(  ModBlocks.ORE_SUPER_CHEESE  ));
@@ -49,7 +51,8 @@ public class ModItems {
 		// broodje kaas
 		Registry.register( Registry.ITEM, new Identifier(  MODID, "bread_cheese"  ), BREAD_CHEESE);
 
-		// 
+		// cheese wheel
+		Registry.register( Registry.ITEM, new Identifier(  MODID, "cheese_wheel"  ), CHEESE_WHEEL);
         
     }
 

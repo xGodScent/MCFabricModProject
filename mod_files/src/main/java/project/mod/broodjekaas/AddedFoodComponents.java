@@ -17,9 +17,9 @@ public class AddedFoodComponents {
     
     public static final FoodComponent SUPER_CHEESE = ( new FoodComponent.Builder()) .hunger(  1  ).saturationModifier(  0.2F  )
     .statusEffect( new StatusEffectInstance( StatusEffects.INVISIBILITY,  200,  0),  1F )
-    .statusEffect( new StatusEffectInstance( StatusEffects.ABSORPTION,  200,  0),  1F )
-    .statusEffect( new StatusEffectInstance( StatusEffects.HEALTH_BOOST,  200,  0),  1F )
-    .statusEffect( new StatusEffectInstance( StatusEffects.FIRE_RESISTANCE,  200,  0),  1F )    
+    .statusEffect( new StatusEffectInstance( StatusEffects.ABSORPTION,  2000,  0),  1F )
+    .statusEffect( new StatusEffectInstance( StatusEffects.HEALTH_BOOST,  2000,  0),  1F )
+    .statusEffect( new StatusEffectInstance( StatusEffects.FIRE_RESISTANCE,  2000,  0),  1F )    
     .alwaysEdible().build();
-    
+
 }

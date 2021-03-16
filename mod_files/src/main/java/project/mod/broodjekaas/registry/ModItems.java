@@ -22,7 +22,7 @@ public class ModItems {
     public static final Item TOAST = new Item( new Item.Settings() .group( ItemGroup.FOOD ) .food(  AddedFoodComponents.TOAST  ) .maxCount(  32  ));
 	public static final Item BREAD_CHEESE = new Item( new Item.Settings() .group(ItemGroup.FOOD) .maxCount(16) .food(AddedFoodComponents.BREAD_CHEESE));
 	public static final Item CHEESE_WHEEL = new Item( new Item.Settings() .group( ItemGroup.FOOD ) .food(  AddedFoodComponents.CHEESE_WHEEL  ) .maxCount(  1  ));
-	public static final Item SUPER_CHEESE = new Item( new Item.Settings() .group( ItemGroup.FOOD ) .food(  AddedFoodComponents.SUPER_CHEESE  ) .maxCount(  64  ));
+	public static final Item SUPER_CHEESE = new super_cheese( new Item.Settings() .group( ItemGroup.FOOD ) .food(  AddedFoodComponents.SUPER_CHEESE  ) .maxCount(  64  ));
 
 
     // new item group (tab in creative menu)

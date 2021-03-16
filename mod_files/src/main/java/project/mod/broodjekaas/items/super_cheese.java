@@ -1,4 +1,4 @@
-package project.mod.broodjekaas.registry;
+package project.mod.broodjekaas.items;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;

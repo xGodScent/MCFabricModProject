@@ -1,6 +1,5 @@
 package project.mod.broodjekaas.world.structures;
 
-import java.beans.VetoableChangeListener;
 // used libraries
 import java.util.Random;
 import com.mojang.serialization.Codec;
@@ -10,7 +9,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.StructureWorldAccess;
-import net.minecraft.world.World;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;

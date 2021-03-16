@@ -4,5 +4,11 @@
     "sounds": [
       "informaticaproject:sound_track_pavle"
     ]
+  },
+  "funny_monkey": {
+    "subtitle": "subtitles.informaticaproject.funny_monkey",
+    "sounds": [
+      "informaticaproject:funny_monkey"
+    ]
   }
 }

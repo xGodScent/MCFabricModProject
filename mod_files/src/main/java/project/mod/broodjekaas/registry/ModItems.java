@@ -9,6 +9,7 @@ import net.minecraft.util.registry.Registry;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemStack;
 import project.mod.broodjekaas.AddedFoodComponents;
+import project.mod.broodjekaas.items.super_cheese;
 
 
 // ModItems class, the register method is called on init (startup)

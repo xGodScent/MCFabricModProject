@@ -22,6 +22,7 @@ public class ModItems {
     public static final Item TOAST = new Item( new Item.Settings() .group( ItemGroup.FOOD ) .food(  AddedFoodComponents.TOAST  ) .maxCount(  32  ));
 	public static final Item BREAD_CHEESE = new Item( new Item.Settings() .group(ItemGroup.FOOD) .maxCount(16) .food(AddedFoodComponents.BREAD_CHEESE));
 	public static final Item CHEESE_WHEEL = new Item( new Item.Settings() .group( ItemGroup.FOOD ) .food(  AddedFoodComponents.CHEESE_WHEEL  ) .maxCount(  1  ));
+	public static final Item SUPER_CHEESE = new Item( new Item.Settings() .group( ItemGroup.FOOD ) .food(  AddedFoodComponents.SUPER_CHEESE  ) .maxCount(  64  ));
 
 
     // new item group (tab in creative menu)
@@ -31,6 +32,7 @@ public class ModItems {
 		stacks.add( new ItemStack(  ModItems.CHEESE_WHEEL  ));
 		stacks.add( new ItemStack(  ModBlocks.CHEESE_BLOCK  ));
 		stacks.add( new ItemStack(  ModBlocks.ORE_CHEESE  ));
+		stacks.add( new ItemStack(  ModItems.SUPER_CHEESE  ));
 		stacks.add( new ItemStack(  ModBlocks.ORE_SUPER_CHEESE  ));
 		stacks.add( new ItemStack(  ModItems.TOAST  ));
 		stacks.add( new ItemStack(  ModItems.BREAD_CHEESE  ));
@@ -53,6 +55,9 @@ public class ModItems {
 
 		// cheese wheel
 		Registry.register( Registry.ITEM, new Identifier(  MODID, "cheese_wheel"  ), CHEESE_WHEEL);
+
+		// super cheese
+		Registry.register( Registry.ITEM, new Identifier(  MODID, "super_cheese"  ), SUPER_CHEESE);
         
     }
 

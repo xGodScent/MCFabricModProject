@@ -15,4 +15,11 @@ public class AddedFoodComponents {
 	public static final FoodComponent BREAD_CHEESE = ( new FoodComponent.Builder()) .hunger(  5  ).saturationModifier(  0.5F  ).build();
     public static FoodComponent CHEESE_WHEEL = ( new FoodComponent.Builder()) .hunger(  6  ).saturationModifier(  0.8F  ).build();
     
+    public static final FoodComponent SUPER_CHEESE = ( new FoodComponent.Builder()) .hunger(  1  ).saturationModifier(  0.2F  )
+    .statusEffect( new StatusEffectInstance( StatusEffects.INVISIBILITY,  200,  0),  1F )
+    .statusEffect( new StatusEffectInstance( StatusEffects.ABSORPTION,  200,  0),  1F )
+    .statusEffect( new StatusEffectInstance( StatusEffects.HEALTH_BOOST,  200,  0),  1F )
+    .statusEffect( new StatusEffectInstance( StatusEffects.FIRE_RESISTANCE,  200,  0),  1F )    
+    .alwaysEdible().build();
+    
 }

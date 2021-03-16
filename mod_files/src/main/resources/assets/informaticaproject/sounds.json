@@ -1,7 +1,8 @@
 {
-    "my_sound": {
-      "sounds": [
-        "informaticaproject:funny_monkey"
-      ]
-    }
+  "sound_track_pavle": {
+    "subtitle": "subtitles.informaticaproject.sound_track_pavle",
+    "sounds": [
+      "informaticaproject:sound_track_pavle"
+    ]
   }
+}

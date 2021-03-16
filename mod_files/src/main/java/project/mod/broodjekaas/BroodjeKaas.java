@@ -31,5 +31,7 @@ public class BroodjeKaas implements ModInitializer {
 
 		ModEntities.registerEntites();
 
+		ModSounds.registerSounds();
+
 	}
 }

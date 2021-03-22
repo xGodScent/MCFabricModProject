@@ -6,14 +6,14 @@
     ],
     "key": {
         "#": {
-            "item": "informaticaproject:butter"
+            "item": "informaticaproject:cheese"
         },
         "D": {
-            "item": "informaticaproject:toast"
+            "item": "minecraft:bread"
         }
     },
     "result": {
-        "item": "informaticaproject:",
+        "item": "informaticaproject:bread_cheese",
         "count": 1
     }
 }

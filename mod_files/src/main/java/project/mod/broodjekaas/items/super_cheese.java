@@ -7,7 +7,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.world.World;
 import project.mod.broodjekaas.ModSounds;
 
-public class super_cheese extends Item{
+public class super_cheese extends Item {
 
     public super_cheese(Settings settings) 
     {

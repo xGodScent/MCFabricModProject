@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "D"
+    ],
+    "key": {
+        "#": {
+            "item": "informaticaproject:cheese"
+        },
+        "D": {
+            "item": "minecraft:bread"
+        }
+    },
+    "result": {
+        "item": "informaticaproject:",
+        "count": 1
+    }
+}

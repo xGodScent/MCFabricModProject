@@ -1,7 +1,7 @@
 {
-    "type": "informaticaproject:ore_cheese",
+    "type": "minecraft:smelting",
     "ingredient": {
-        "item": "minecraft:coal"
+        "item": "informaticaproject:ore_cheese"
     },
     "result": "informaticaproject:cheese",
     "experience": 0.2,

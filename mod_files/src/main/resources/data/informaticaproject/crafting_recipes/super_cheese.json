@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "item": "informaticaproject:ore_super_cheese"
+    },
+    "result": "informaticaproject:super_cheese",
+    "experience": 0.5,
+    "cookingtime": 200
+}

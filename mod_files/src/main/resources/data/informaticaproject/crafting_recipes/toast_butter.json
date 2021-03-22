@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "D"
+    ],
+    "key": {
+        "#": {
+            "item": "informaticaproject:butter"
+        },
+        "D": {
+            "item": "informaticaproject:toast"
+        }
+    },
+    "result": {
+        "item": "informaticaproject:",
+        "count": 1
+    }
+}

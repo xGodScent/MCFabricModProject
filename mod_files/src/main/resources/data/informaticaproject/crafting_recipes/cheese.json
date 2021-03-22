@@ -1,0 +1,9 @@
+{
+    "type": "informaticaproject:ore_cheese",
+    "ingredient": {
+        "item": "minecraft:coal"
+    },
+    "result": "informaticaproject:cheese",
+    "experience": 0.2,
+    "cookingtime": 200
+}

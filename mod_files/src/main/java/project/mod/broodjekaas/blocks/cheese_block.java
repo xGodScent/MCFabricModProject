@@ -1,8 +1,11 @@
 package project.mod.broodjekaas.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -22,6 +25,14 @@ public class cheese_block extends Block {
     }
 
     @Override
+    public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
+        
+        System.out.println("well this works too!");
+        
+    }
+
+
+    @Override
     public void onLandedUpon(World world, BlockPos pos, Entity entity, float distance) {
         
         if (!world.isClient) {
@@ -35,7 +46,9 @@ public class cheese_block extends Block {
             );
         }
 
-
+        System.out.println(
+            "well this works, where is monke?"
+        );
 
         super.onLandedUpon(world, pos, entity, distance);
     }

@@ -25,14 +25,6 @@ public class cheese_block extends Block {
     }
 
     @Override
-    public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
-        
-        System.out.println("well this works too!");
-        
-    }
-
-
-    @Override
     public void onLandedUpon(World world, BlockPos pos, Entity entity, float distance) {
         
         if (!world.isClient) {
@@ -45,10 +37,6 @@ public class cheese_block extends Block {
                     1f  // pitch
             );
         }
-
-        System.out.println(
-            "well this works, where is monke?"
-        );
 
         super.onLandedUpon(world, pos, entity, distance);
     }

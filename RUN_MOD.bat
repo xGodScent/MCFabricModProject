@@ -4,9 +4,11 @@ title runClient
 echo.
 java -version
 echo.
-echo [101;93m [!] WARNING: Please confirm that java version is equal to 1.8._ [0m
+echo [101;93m [!] WARNING: Please confirm that java version is equal to jdk1.8._ [0m
 echo    - if java ver == 1.8._  :  continue.
-echo    - if NOT java ver == 1.8._  :  close cmd window and download java 1.8 from the oracle website.
+echo    - if NOT java ver == 1.8._  :  close cmd window and download java 1.8 from:
+echo		 https://adoptopenjdk.net/releases.html?variant=openjdk8&jvmVariant=hotspot
+echo 			-> (restart might be required)
 echo.
 
 pause
